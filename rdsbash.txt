@@ -1,9 +1,9 @@
 #!/bin/bash
-//Install apache a, php, and MySql
+//Install apache, php, and MySql
 yum install httpd php php-mysql -y
 //Install updates
 yum update -y
-//Make sure apache server startson boot
+//Make sure apache server starts on boot
 chkconfig httpd on
 //Start apache server
 service httpd start
