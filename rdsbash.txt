@@ -1,0 +1,14 @@
+#!/bin/bash
+//Install apache a, php, and MySql
+yum install httpd php php-mysql -y
+//Install updates
+yum update -y
+//Make sure apache server startson boot
+chkconfig httpd on
+//Start apache server
+service httpd start
+echo "<?php phpinfo();?>" > /var/www/html/index.php
+//Navigate to html directory
+cd /var/www/html
+//Copy Mysql connection from private bucket to Ec2 server
+aws s3 cp s3://bucket name/file name ./
